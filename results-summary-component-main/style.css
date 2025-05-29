@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 500 700 800;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* LAYOUT */
+
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 375px;
+    padding: 1rem 3rem;
+    background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%) 0%,
+    hsl(252, 100%, 67%) 10%,
+    hsl(241, 81%, 54%) 100%
+    );
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-align: center;
+    
+}
+
+.result-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1.5rem 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+.summary-section {
+    width: 375px;
+    padding: 1.8rem;
+    background-color: white;
+}
+.reaction,
+.memory,
+.verbal,
+.visual {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 0rem;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.label {
+    display: flex;
+    margin-left: 10px;
+    justify-content: flex-start;
+    gap: 0.8rem;
+}
+
+.reaction {
+    background-color: hsla(0, 100%, 67%, 0.05);
+    color: hsl(0, 100%, 67%);
+}
+.memory {
+    background-color: hsl(39, 100%, 56%, 0.05);
+    color: hsl(39, 100%, 56%);
+}
+.verbal {
+    background-color: hsl(166, 100%, 37%, 0.05);
+    color: hsl(166, 100%, 37%);
+}
+.visual {
+    background-color: hsl(234, 85%, 45%, 0.05);
+    color: hsl(234, 85%, 45%);
+}
+.summary-score {
+    margin-right: 15px;
+}
+/* BUTTONS */
+.btn-continue {
+    display: inline-block; /* need to size and click entire area */ 
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    background-color: hsl(224, 30%, 27%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.btn-continue:hover {
+    background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%) 0%,
+    hsl(252, 100%, 67%) 10%,
+    hsl(241, 81%, 54%) 100%
+    );
+}
+
+/* TYPOGRAPHY */
+.score-section-title {
+    margin-bottom: 0.8rem;
+    color: white;
+}
+.score-section-text {
+    margin-bottom: 1.5rem;
+}
+.result {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+}
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 0.5rem;
+}
+.summary-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.summary-score {
+    color: hsl(224, 30%, 27%, 0.50);
+}
+.bold {
+    font-weight: 800;
+    color: black;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1440px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(221, 100%, 96%);
+        height: 100vh;
+    }
+    .wrapper {
+        display: grid;
+        max-width: 700px;
+        grid-template: 500px / 350px 350px;
+    }
+
+    .score-section,
+    .summary-section {
+        width: 350px;
+        min-width: 350px;
+        max-width: 350px;
+        padding: 1.8rem; /* Match the default .summary-section padding */
+        border-radius: 25px;
+        box-sizing: border-box;
+        position: relative;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+
+    .score-section {
+        z-index: 2;
+        padding: 1.8rem;
+    }
+    .summary-section {
+        z-index: 1;
+        margin-left: -15px; /* Adjust this value for more/less overlap */
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 1.8rem;
+    }
+    .score-section {
+        justify-content: space-between;
+    }
+
+
+
+    .summary-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    }
+
+}
